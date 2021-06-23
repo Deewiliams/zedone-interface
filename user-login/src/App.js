@@ -8,18 +8,19 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
-        <switch>
-          <Route exact path="/">
+        
+          <Route exact path="/home">
             <Home />
             </Route>
             
-             <Route path="/CompanyRegistration">
+             <Route exact path="/CompanyRegistration">
              <CompanyRegistration />
              </Route>
-            <Route path="/Login">
+
+            <Route exact path="/Login">
             <Login />
             </Route>
-        </switch>
+      
 
       </BrowserRouter>
 
