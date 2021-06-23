@@ -1,5 +1,6 @@
 import React from 'react'
 import Input from '../components/Input'
+import Buttonprops from '../components/Buttonprops'
 
 
 const CompanyRegistration = () => {
@@ -43,15 +44,20 @@ const CompanyRegistration = () => {
 
                     <Input placeholder="Re-Enter Password" 
                         type="password"
-                    />  
+                    /> 
+                    <Buttonprops 
+                       button_name= "Register"
+                    />
+
+
                
-                   <button className="bg-purple-500 text-gray-100 sm:text-2xl sm:py-2 sm:px-8 
+                   {/* <button className="bg-purple-500 text-gray-100 sm:text-2xl sm:py-2 sm:px-8 
                 md:py-4 md:px-10 md:text-lg lg:py-4 
                 lg:px-20 lg:text-xl hover:bg-purple-600 
                 hover:text-white rounded-lg
                 ">
                 Register Now
-                </button>
+                </button> */}
             </ul>
           
             </form>
