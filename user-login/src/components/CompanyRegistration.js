@@ -1,4 +1,5 @@
 import React from 'react'
+import Input from '../components/Input'
 
 
 const CompanyRegistration = () => {
@@ -16,60 +17,34 @@ const CompanyRegistration = () => {
             <form className="space-y-8">
             <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 grid-rows-4 grid-flow-row gap-6">
               
-                <input className="sm:h-12 lg:h-16 md:h-14 rounded-lg 
-                    focus:outline-none focus:ring-2 
-                    focus:ring-blue-600 focus:border-transparent 
-                    focus:bg-blue-100  border border-gray-500 sm:text-lg lg:text-2xl p-2 
-                    placeholder-gray-400 ..." 
-                    placeholder="Company Name"
+                   <Input placeholder="Company Name" 
                     type="text"
-                  />
+                    />
 
-                <input className="sm:h-12 lg:h-16 md:h-14 rounded-lg 
-                    focus:outline-none focus:ring-2 
-                    focus:ring-blue-600 focus:border-transparent 
-                    focus:bg-blue-100  border border-gray-500 sm:text-lg lg:text-2xl p-2 
-                    placeholder-gray-400 ..."
-                    placeholder="Company Address"
-                    type="text"
-                  />
+                    <Input placeholder="Company Address" 
+                     type="text"
 
-                <input className="sm:h-12 lg:h-16 md:h-14 rounded-lg 
-                    focus:outline-none focus:ring-2 focus:ring-blue-600 
-                    focus:border-transparent focus:bg-blue-100 sm:text-lg
-                    lg:text-2xl p-2 border border-gray-500 placeholder-gray-400 ..." 
-                    placeholder="Company Representative"
-                    type="text"
-                 />
-                <input className="sm:h-12 lg:h-16 md:h-14 rounded-lg
-                    focus:outline-none focus:ring-2 focus:ring-blue-600 
-                    focus:border-transparent focus:bg-blue-100 sm:text-lg 
-                    lg:text-2xl p-2  border border-gray-500  placeholder-gray-400 ..." 
-                    placeholder="Occupation"
-                    type="text"
-                 />
+                    />
+                    <Input placeholder="Company Representative" 
+                        type="text"
+                    />
 
-                <input className="sm:h-12 lg:h-16 md:h-14 rounded-lg 
-                    focus:outline-none focus:ring-2 focus:ring-blue-600
-                    focus:border-transparent focus:bg-blue-100 sm:text-lg 
-                    lg:text-2xl p-2  border border-gray-500  placeholder-gray-400 ..."
-                    placeholder="zedone@example.com"
-                    type="email"
-                  />
-                <input className="sm:h-12 lg:h-16 md:h-14 rounded-lg
-                    focus:outline-none focus:ring-2 focus:ring-blue-600 
-                    focus:border-transparent focus:bg-blue-100 sm:text-lg 
-                    lg:text-2xl p-2  border border-gray-500 placeholder-gray-400 ..."
-                    type="password"
-                    placeholder="Password"
-                  />
-                <input className="sm:h-12 lg:h-16 md:h-14 rounded-lg 
-                    focus:outline-none focus:ring-2 focus:ring-blue-600 
-                    focus:border-transparent focus:bg-blue-100 sm:text-lg
-                    lg:text-2xl p-2  border border-gray-500 placeholder-gray-400 ..." 
-                    type="password"
-                    placeholder="Re-Enter Password"
-                 />
+                    <Input placeholder="Occupation" 
+                      type="text"
+                    />                      
+
+                    <Input placeholder="zedone@example.com" 
+                        type="text"
+                    /> 
+
+                    <Input placeholder="Password" 
+                        type="password"
+                    />        
+
+                    <Input placeholder="Re-Enter Password" 
+                        type="password"
+                    />  
+               
                    <button className="bg-purple-500 text-gray-100 sm:text-2xl sm:py-2 sm:px-8 
                 md:py-4 md:px-10 md:text-lg lg:py-4 
                 lg:px-20 lg:text-xl hover:bg-purple-600 

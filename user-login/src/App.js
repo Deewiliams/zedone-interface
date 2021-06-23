@@ -1,3 +1,5 @@
+import { BrowserRouter, Route } from 'react-router-dom';
+import Home from './components/Home'
 import CompanyRegistration from './components/CompanyRegistration';
 import Login from './components/Login'
 import './App.css';
@@ -5,8 +7,23 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-     <CompanyRegistration />
-     <Login />
+      <BrowserRouter>
+        <switch>
+          <Route exact path="/">
+            <Home />
+            </Route>
+            
+             <Route path="/CompanyRegistration">
+             <CompanyRegistration />
+             </Route>
+            <Route path="/Login">
+            <Login />
+            </Route>
+        </switch>
+
+      </BrowserRouter>
+
+
     </div>
   );
 }

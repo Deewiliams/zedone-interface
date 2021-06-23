@@ -7,6 +7,7 @@ const Login = () => {
         <div className="h-screen  bg-gradient-to-tr from-white to-purple-500 flex items-center justify-center">
             <div className="bg-white shodow-2xl p-4 md:w-3/4  w-3/4 rounded-lg">
                 <img className="sm:h-72 p-4 lg:px-96" src={log} alt="login image" />
+
                  <form className="space-y-8 lg:flex lg:items-center lg:justify-end">
                <ul className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 grid-rows-4 gap-6 lg:w-3/4 bordr">
                <input className="sm:h-12 lg:h-16 lg:w-2/3 md:h-14 rounded-lg border border-gray-500
