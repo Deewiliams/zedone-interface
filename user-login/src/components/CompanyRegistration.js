@@ -19,7 +19,7 @@ const CompanyRegistration = () => {
                 <input className="sm:h-12 lg:h-16 md:h-14 rounded-lg 
                     focus:outline-none focus:ring-2 
                     focus:ring-blue-600 focus:border-transparent 
-                    focus:bg-blue-100 sm:text-lg lg:text-2xl p-2 
+                    focus:bg-blue-100  border border-gray-500 sm:text-lg lg:text-2xl p-2 
                     placeholder-gray-400 ..." 
                     placeholder="Company Name"
                     type="text"
@@ -28,7 +28,7 @@ const CompanyRegistration = () => {
                 <input className="sm:h-12 lg:h-16 md:h-14 rounded-lg 
                     focus:outline-none focus:ring-2 
                     focus:ring-blue-600 focus:border-transparent 
-                    focus:bg-blue-100 sm:text-lg lg:text-2xl p-2 
+                    focus:bg-blue-100  border border-gray-500 sm:text-lg lg:text-2xl p-2 
                     placeholder-gray-400 ..."
                     placeholder="Company Address"
                     type="text"
@@ -37,14 +37,14 @@ const CompanyRegistration = () => {
                 <input className="sm:h-12 lg:h-16 md:h-14 rounded-lg 
                     focus:outline-none focus:ring-2 focus:ring-blue-600 
                     focus:border-transparent focus:bg-blue-100 sm:text-lg
-                    lg:text-2xl p-2  placeholder-gray-400 ..." 
+                    lg:text-2xl p-2 border border-gray-500 placeholder-gray-400 ..." 
                     placeholder="Company Representative"
                     type="text"
                  />
                 <input className="sm:h-12 lg:h-16 md:h-14 rounded-lg
                     focus:outline-none focus:ring-2 focus:ring-blue-600 
                     focus:border-transparent focus:bg-blue-100 sm:text-lg 
-                    lg:text-2xl p-2   placeholder-gray-400 ..." 
+                    lg:text-2xl p-2  border border-gray-500  placeholder-gray-400 ..." 
                     placeholder="Occupation"
                     type="text"
                  />
@@ -52,32 +52,33 @@ const CompanyRegistration = () => {
                 <input className="sm:h-12 lg:h-16 md:h-14 rounded-lg 
                     focus:outline-none focus:ring-2 focus:ring-blue-600
                     focus:border-transparent focus:bg-blue-100 sm:text-lg 
-                    lg:text-2xl p-2   placeholder-gray-400 ..."
+                    lg:text-2xl p-2  border border-gray-500  placeholder-gray-400 ..."
                     placeholder="zedone@example.com"
                     type="email"
                   />
                 <input className="sm:h-12 lg:h-16 md:h-14 rounded-lg
                     focus:outline-none focus:ring-2 focus:ring-blue-600 
                     focus:border-transparent focus:bg-blue-100 sm:text-lg 
-                    lg:text-2xl p-2  placeholder-gray-400 ..."
+                    lg:text-2xl p-2  border border-gray-500 placeholder-gray-400 ..."
                     type="password"
                     placeholder="Password"
                   />
                 <input className="sm:h-12 lg:h-16 md:h-14 rounded-lg 
                     focus:outline-none focus:ring-2 focus:ring-blue-600 
                     focus:border-transparent focus:bg-blue-100 sm:text-lg
-                    lg:text-2xl p-2  placeholder-gray-400 ..." 
+                    lg:text-2xl p-2  border border-gray-500 placeholder-gray-400 ..." 
                     type="password"
                     placeholder="Re-Enter Password"
                  />
-            </ul>
-            <button className="bg-purple-500 text-gray-100 sm:text-2xl sm:py-2 sm:px-8 
+                   <button className="bg-purple-500 text-gray-100 sm:text-2xl sm:py-2 sm:px-8 
                 md:py-4 md:px-10 md:text-lg lg:py-4 
                 lg:px-20 lg:text-xl hover:bg-purple-600 
                 hover:text-white rounded-lg
                 ">
                 Register Now
                 </button>
+            </ul>
+          
             </form>
             </div>
                 
