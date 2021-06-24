@@ -11,10 +11,12 @@ const CompanyRegistration = () => {
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
     const [re_password,setRe_Password] = useState('');
+    const [submit,setSubmit] = useState(false);
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(handleSubmit);
+        setSubmit(true);
+        console.log(submit);
     }
    
     return (
