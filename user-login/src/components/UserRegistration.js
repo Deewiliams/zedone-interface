@@ -37,7 +37,7 @@ const UserRegistration = () => {
                 />
 
                 <Input placeholder="NRC/Passport No." 
-                    type="number"
+                    type="text"
                     value={nrcPassportNo} onChange={event => setNrcPassportNo(event.target.value)}
                     
                 />
@@ -80,7 +80,7 @@ const UserRegistration = () => {
         {photo}
         {nrcPassportNo}
         {dateOfBirth}
-        {fullName}
+        
         </div>
             
     </div>
