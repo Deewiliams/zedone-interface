@@ -1,9 +1,16 @@
-import React from 'react'
+import React,{useState} from 'react'
 import Input from './Input'
 import Buttonprops from './Buttonprops'
 
 
 const UserRegistration = () => {
+        const [fullName, setFullName] = useState("");  
+        const [dateOfBirth, setDateOfBirth] = useState("");
+        const [nrcPassportNo, setNrcPassportNo] = useState("");
+        const [photo, setPhoto] = useState("");
+        const [phoneNumber, setPhoneNumber] = useState(""); 
+        const [pin, setPin] = useState("");
+        const [address, SetAddress] = useState("");
     return (
         <div className="h-screen bg-gradient-to-tr from-white to-purple-500 flex items-center justify-center">
         <div className="bg-gray-200 shadow-2xl p-4 w-2/3 rounded-lg">
@@ -20,46 +27,60 @@ const UserRegistration = () => {
           
                <Input placeholder="Full Name" 
                     type="text"
-                    
+                    value={fullName} onChange={event => setFullName(event.target.value)}
                 />
 
                 <Input placeholder="Date of Birth" 
                     type="date"
+                    value={dateOfBirth} onChange={event => setDateOfBirth(event.target.value)}
                     
                 />
 
                 <Input placeholder="NRC/Passport No." 
                     type="number"
+                    value={nrcPassportNo} onChange={event => setNrcPassportNo(event.target.value)}
                     
                 />
 
                 <Input placeholder="Photo" 
                     type="file"
-                    
+                    value={photo} onChange={event => setPhoto(event.target.value)}
                 />                      
 
                 <Input placeholder="Phone Number" 
                     type="Number"
+                    value={phoneNumber} onChange={event => setPhoneNumber(event.target.value)}
                     
                 /> 
 
                 <Input placeholder="Pin" 
                     type="password"
+                    value={pin} onChange={event => SVGTextPositioningElement(event.target.value)}
                     
                 />        
 
                 <Input placeholder="Address" 
                     type="text"
+                    value={address} onChange={event => SetAddress(event.target.value)}
                    
                 /> 
                 <Buttonprops 
                    button_name= "Register"
+                   
                    
                 />
         </ul>
        
       
         </form>
+        {fullName}
+        {address}
+        {pin}
+        {phoneNumber}
+        {photo}
+        {nrcPassportNo}
+        {dateOfBirth}
+        {fullName}
         </div>
             
     </div>
