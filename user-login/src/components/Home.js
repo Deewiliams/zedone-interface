@@ -1,5 +1,9 @@
 import React from 'react'
 import transaction from '../images/transaction.png'
+import mobile from '../images/mobile.png'
+import subscriptions from '../images/Subscriptions.png'
+import product from '../images/product.png'
+
 import { Link } from 'react-router-dom'
 
 
@@ -39,16 +43,28 @@ const Home = () => {
                 <h1 className="hover:text-blue-600">Contact</h1>
             </div>
             <div>
+                <h1 className="font-bold text-sm -mt-2">We Offer The Following Services</h1>
+            </div>
+            <div>
             </div>
             {/* **************Main Landing Page*************** */}
             <div className="space-x-8 p-2">
-                <ul className="grid grid-cols-4 gap-2 grid-flows-cols">
-                    <li className="bg-white col-span-2 rounded-lg" ><div className="h-44">
-                        <img className="mt-2" src={transaction} alt="transaction image"/>
+                <ul className="grid grid-cols-4 gap-2 grid-flows-cols ">
+                    <li className="bg-white col-span-2  shadow-2xl rounded-lg" ><div className="h-40">
+                        <img className="mt-3" src={transaction} alt="transaction image"/>
+                        <h1 className="text-sm mt-6">Online transactions</h1>
                         </div></li>
-                    <li className="bg-white col-span-2 rounded-lg" ><div className="h-40"></div></li>
-                    <li className="bg-white col-span-2 rounded-lg" ><div className="h-44"></div></li>
-                    <li className="bg-white col-span-2 rounded-lg" ><div className="h-40"></div></li>
+                    <li className="bg-white col-span-2 shadow-2xl rounded-lg" ><div className="h-40"> 
+                         <img className="mt-3" src={subscriptions} alt="transaction image"/>
+                        <h1 className="text-sm mt-2">Subscriptions</h1></div></li>
+                    <li className="bg-white col-span-2 shadow-2xl rounded-lg" ><div className="h-40">
+                    <img className="mt-3" src={mobile} alt="transaction image"/>
+                        <h1 className="text-sm mt-2">Mobile Payments</h1>
+                        </div></li>
+                    <li className="bg-white col-span-2 shadow-2xl rounded-lg" ><div className="h-40">
+                    <img className="mt-3" src={product} alt="transaction image"/>
+                        <h1 className="text-sm mt-2">Product Payments</h1>
+                        </div></li>
                     
                     
                 </ul>
