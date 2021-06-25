@@ -3,6 +3,7 @@ import Home from './components/Home'
 import CompanyRegistration from './components/CompanyRegistration';
 import Login from './components/Login'
 import UserRegistration from './components/UserRegistration'
+import UserLogin from './components/UserLogin'
 import './App.css';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
             </Route>
             <Route exact path="/users">
             <UserRegistration />
+            <UserLogin />
             </Route>
             
              <Route exact path="/CompanyRegistration">
