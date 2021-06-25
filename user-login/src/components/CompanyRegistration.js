@@ -16,7 +16,7 @@ const CompanyRegistration = () => {
     function handleSubmit(event) {
         event.preventDefault();
         setSubmit(true);
-        console.log(submit);
+        console.log(companyName);
     }
    
     return (
