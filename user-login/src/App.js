@@ -4,6 +4,7 @@ import CompanyRegistration from './components/CompanyRegistration';
 import Login from './components/Login'
 import UserRegistration from './components/UserRegistration'
 import UserLogin from './components/UserLogin'
+import LogCard from './components/LogCard'
 import './App.css';
 
 function App() {
@@ -15,8 +16,13 @@ function App() {
             <Home />
             </Route>
             <Route exact path="/users">
-            <UserRegistration />
             <UserLogin />
+            </Route>
+            <Route exact path="/UserRegistration">
+            <UserRegistration />
+            </Route>
+            <Route exact path="/LogCard">
+              <LogCard />
             </Route>
             
              <Route exact path="/CompanyRegistration">
