@@ -61,8 +61,6 @@ const Home = () => {
                         <li className="bg-white rounded-lg shadow-lg"><div className="h-60 lg:h-96">
                         <img className="mt-2 md:mt-2 lg:mb-8 lg:mt-2 lg:grid lg:justify-center" src={mobile} alt="transaction" />
                         <h1 className="lg:text-2xl lg:font-bold">Mobile Payments</h1></div>
-                        
-                        
                         </li>
 
                         <li className="bg-white rounded-lg shadow-lg"><div className="h-60 lg:h-96">
