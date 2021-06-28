@@ -9,7 +9,7 @@ const initialState = {
     occupation: '',
     email: '',
     passwordComp: '',
-    reEnterPasswordComp: '',
+    // reEnterPasswordComp: '',
 
 
 }
@@ -17,36 +17,28 @@ const initialState = {
 
 const CompanyRegistration = () => {
      const [company, setCompany] = useState(initialState);
-     const [responseMessage, setResponseMessage] = useState({
-        isError: false,
-        message: null,
-      })
-
+     
      function handleChange (event) {
          setCompany({...company, [event.target.name]: event.target.value});
         //  console.log(company);
      }
 
      function handleClick() {
-         console.log(company);
-        fetch('http://localhost:5000/api/v1/registerCompany', {
-      method: 'POST',
-      body: JSON.stringify(company),
-    })
-      .then((res) =>
-        setResponseMessage({
-          ...responseMessage,
-          message: 'Successfully submmitted to the server',
-        }),
-      )
-      .catch((err) =>
-        setResponseMessage({
-          ...responseMessage,
-          isError: true,
-          message: err.message,
-        }),
-      )
-  }
+         console.log(company); 
+    fetch('http://localhost:5000/api/v1/registerCompany', {
+        method: 'POST',
+        body:company,
+        headers: {
+            'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin":"no-cors"
+        },
+    }).then( (response) => {
+       
+        return response.json();
+    }).catch( (error) => {
+      
+    });
+}
    
     return (
         <div className="h-screen bg-gradient-to-tr from-white to-purple-500 flex items-center justify-center">
@@ -98,12 +90,13 @@ const CompanyRegistration = () => {
                         name="email"
                     /> 
 
-                    <Input placeholder="Password" 
+                     <Input placeholder="Password" 
                         type="password"
                         value={company.passwordComp} 
                         onChange={handleChange}
                         name="passwordComp"
-                    />        
+                    />     
+                    
 
                     <Input placeholder="Re-Enter Password" 
                         type="password"
