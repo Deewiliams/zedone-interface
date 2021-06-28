@@ -2,22 +2,51 @@ import React,{useState, useEffect} from 'react'
 import Input from '../components/Input'
 import Buttonprops from '../components/Buttonprops'
 
+const initialState = {
+    companyName: '',
+    companyAddress: '',
+    companyRep: '',
+    occupation: '',
+    email: '',
+    passwordComp: '',
+    reEnterPasswordComp: '',
+
+
+}
+
 
 const CompanyRegistration = () => {
-    const [companyName,setCompanyName] = useState('');
-    const [companyAddress,setCompanyAddress] = useState('');
-    const [companyRepresentative,setCompanyRepresentative] = useState('');
-    const [occupation,setOccupation] = useState('');
-    const [email,setEmail] = useState('');
-    const [password,setPassword] = useState('');
-    const [re_password,setRe_Password] = useState('');
-    const [submit,setSubmit] = useState(false);
+     const [company, setCompany] = useState(initialState);
+     const [responseMessage, setResponseMessage] = useState({
+        isError: false,
+        message: null,
+      })
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        setSubmit(true);
-        console.log(companyName);
-    }
+     function handleChange (event) {
+         setCompany({...company, [event.target.name]: event.target.value});
+        //  console.log(company);
+     }
+
+     function handleClick() {
+         console.log(company);
+        fetch('http://localhost:5000/api/v1/registerCompany', {
+      method: 'POST',
+      body: JSON.stringify(company),
+    })
+      .then((res) =>
+        setResponseMessage({
+          ...responseMessage,
+          message: 'Successfully submmitted to the server',
+        }),
+      )
+      .catch((err) =>
+        setResponseMessage({
+          ...responseMessage,
+          isError: true,
+          message: err.message,
+        }),
+      )
+  }
    
     return (
         <div className="h-screen bg-gradient-to-tr from-white to-purple-500 flex items-center justify-center">
@@ -30,51 +59,73 @@ const CompanyRegistration = () => {
              ">
             Company Registration Form</h1>
 
-            <form className="space-y-8">
+            <form className="space-y-8" onSubmit={handleClick}>
             <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 grid-rows-4 grid-flow-row gap-6">
               
                    <Input placeholder="Company Name" 
                         type="text"
-                        value={companyName} onChange={event => setCompanyName(event.target.value)}
+                        value={company.companyName} 
+                        onChange={handleChange}
+                        name="companyName"
                     />
+                   
 
                     <Input placeholder="Company Address" 
                         type="text"
-                        value={companyAddress} onChange={event => setCompanyAddress(event.target.value)}
+                        value={company.companyAddress} 
+                        onChange={handleChange}
+                        name="companyAddress"
                     />
 
                     <Input placeholder="Company Representative" 
                         type="text"
-                        value={companyRepresentative} onChange={event => setCompanyRepresentative(event.target.value)}
+                        value={company.companyRep} 
+                        onChange={handleChange}
+                        name="companyRep"
                     />
 
                     <Input placeholder="Occupation" 
                         type="text"
-                        value={occupation} onChange={event => setOccupation(event.target.value)}
+                        value={company.occupation} 
+                        onChange={handleChange}
+                        name="occupation"
                     />                      
 
                     <Input placeholder="zedone@example.com" 
-                        type="text"
-                        value={email} onChange={event => setEmail(event.target.value)}
+                        type="email"
+                        value={company.email} 
+                        onChange={handleChange}
+                        name="email"
                     /> 
 
                     <Input placeholder="Password" 
                         type="password"
-                        value={password} onChange={event => setPassword(event.target.value)}
+                        value={company.passwordComp} 
+                        onChange={handleChange}
+                        name="passwordComp"
                     />        
 
                     <Input placeholder="Re-Enter Password" 
                         type="password"
-                        value={re_password} onChange={event => setRe_Password(event.target.value)}
-                    /> 
-                    <Buttonprops 
-                       button_name= "Register"
-                       onClick={handleSubmit}
-                    />
+                        value={company.reEnterPasswordComp} 
+                        onChange={handleChange}
+                        name="reEnterPasswordComp"
+                    />    
             </ul>
-           
+            
           
             </form>
+            <button className="bg-purple-500 
+                text-gray-100 sm:text-2xl lg:-w-40 sm:py- sm:px-8 
+                d:py-4 md:px-10 md:text-lg lg:py-4 lg:w-2/3
+                lg:px-20 lg:text-3xl hover:bg-purple-600 
+                hover:text-white rounded-lg
+                "
+                role="submit"
+                onClick={handleClick}
+                >
+                Login
+                </button> 
             </div>
                 
         </div>

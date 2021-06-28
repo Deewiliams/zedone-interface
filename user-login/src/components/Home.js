@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom'
 const Home = () => {
     return (
         // BUttons for Logging and Registration
-        <div className="max-h-screen-96 md:min-h-full ... bg-gradient-to-tr from-white to-purple-500">
+        <div className="h-screen md:min-h-full ... bg-gradient-to-tr from-white to-purple-500">
             <div className="bg-purple-600 shadow-2xl h-28">
                     <h1 className="lg:text-6xl flex items-center lg:p-6 text-gray-100 text-2xl sm:text-3xl p-8 md:text-6xl md:p-4 sm:p-6">
                     <img className="w-24 md:w-52" src={zedone} /></h1>
