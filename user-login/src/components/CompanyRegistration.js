@@ -27,10 +27,9 @@ const CompanyRegistration = () => {
          console.log(company); 
     fetch('http://localhost:5000/api/v1/registerCompany', {
         method: 'POST',
-        body:company,
+        body:JSON.stringify(company),
         headers: {
             'Content-Type': 'application/json',
-            "Access-Control-Allow-Origin":"no-cors"
         },
     }).then( (response) => {
        
