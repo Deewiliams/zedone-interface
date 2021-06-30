@@ -1,6 +1,11 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState,} from 'react'
+import { appendErrors } from 'react-hook-form'
 import Input from '../components/Input'
-import Buttonprops from '../components/Buttonprops'
+import Validation from './Validation'
+
+
+
+
 
 const initialState = {
     companyName: '',
@@ -9,7 +14,7 @@ const initialState = {
     occupation: '',
     email: '',
     passwordComp: '',
-    // reEnterPasswordComp: '',
+    reEnterPasswordComp: '',
 
 
 }
@@ -17,6 +22,7 @@ const initialState = {
 
 const CompanyRegistration = () => {
      const [company, setCompany] = useState(initialState);
+     const [errors, setErrors] = useState({});
      
      function handleChange (event) {
          setCompany({...company, [event.target.name]: event.target.value});
@@ -24,7 +30,9 @@ const CompanyRegistration = () => {
      }
 
      function handleClick() {
-         console.log(company); 
+         setErrors(Validation(company));
+         console.log(company);
+         
     fetch('http://localhost:5000/api/v1/registerCompany', {
         method: 'POST',
         body:JSON.stringify(company),
@@ -38,7 +46,7 @@ const CompanyRegistration = () => {
       
     });
 }
-   
+
     return (
         <div className="h-screen bg-gradient-to-tr from-white to-purple-500 flex items-center justify-center">
             <div className="bg-gray-200 shadow-2xl p-4 w-2/3 rounded-lg">
@@ -59,14 +67,16 @@ const CompanyRegistration = () => {
                         onChange={handleChange}
                         name="companyName"
                     />
-                   
-
+                    {errors.companyName && <p className="text-red-700 lg:mt-6 lg:text-2xl">{errors.companyName} </p>}
+                    
                     <Input placeholder="Company Address" 
                         type="text"
                         value={company.companyAddress} 
                         onChange={handleChange}
                         name="companyAddress"
+                      
                     />
+                     {errors.companyAddress && <p className="text-red-700 lg:mt-6 lg:text-2xl">{errors.companyAddress} </p>}
 
                     <Input placeholder="Company Representative" 
                         type="text"
@@ -74,27 +84,34 @@ const CompanyRegistration = () => {
                         onChange={handleChange}
                         name="companyRep"
                     />
+                     {errors.companyRep && <p className="text-red-700 lg:mt-6 lg:text-2xl">{errors.companyRep} </p>}
 
                     <Input placeholder="Occupation" 
                         type="text"
                         value={company.occupation} 
                         onChange={handleChange}
                         name="occupation"
-                    />                      
+                        
+                    />  
+                     {errors.occupation && <p className="text-red-700 lg:mt-6 lg:text-2xl">{errors.occupation} </p>}                    
 
                     <Input placeholder="zedone@example.com" 
                         type="email"
                         value={company.email} 
                         onChange={handleChange}
                         name="email"
+                       
                     /> 
+                     {errors.email && <p className="text-red-700 lg:mt-6 lg:text-2xl">{errors.email} </p>}
 
                      <Input placeholder="Password" 
                         type="password"
                         value={company.passwordComp} 
                         onChange={handleChange}
                         name="passwordComp"
+                       
                     />     
+                     {errors.passwordComp && <p className="text-red-700 lg:mt-6 lg:text-2xl">{errors.passwordComp} </p>}
                     
 
                     <Input placeholder="Re-Enter Password" 
@@ -102,7 +119,9 @@ const CompanyRegistration = () => {
                         value={company.reEnterPasswordComp} 
                         onChange={handleChange}
                         name="reEnterPasswordComp"
-                    />    
+                       
+                    />   
+                    
             </ul>
             
           
