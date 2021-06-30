@@ -28,10 +28,10 @@ const Home = () => {
                  UserLogin</Link>
                 </h1>
                 <h1 className="py-2 h-10 w-32 sm:px-3 sm:py-2 md:px-3 md:py-2
-                text-base bg-white lg:px-3 lg:py-2 rounded-lg hover:bg-red-400 
+                text-base bg-white lg:px-0 lg:py-2 rounded-lg hover:bg-red-400 
                 hover:text-white cursor-pointer ">
-                <Link to="/users">
-                 Users-register</Link>
+                <Link to="/UserRegistration">
+                 UsersRegistration</Link>
                  
                 </h1>
             </div> 
