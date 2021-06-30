@@ -17,7 +17,7 @@ const Validation = (company) => {
     }
     if(!company.email){
         errors.email="email required."
-    } else if(!/\S+@\S+\.S+/.test(company.email)){
+    } else if(!/\S+@\S+\.\S+/.test(company.email)){
         errors.email="Email is invalid"
     }
 

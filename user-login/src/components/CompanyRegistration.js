@@ -14,8 +14,6 @@ const initialState = {
     occupation: '',
     email: '',
     passwordComp: '',
-    reEnterPasswordComp: '',
-
 
 }
 
@@ -67,7 +65,7 @@ const CompanyRegistration = () => {
                         onChange={handleChange}
                         name="companyName"
                     />
-                    {errors.companyName && <p className="text-red-700 lg:mt-6 lg:text-2xl">{errors.companyName} </p>}
+                    {errors.companyName && <p className="text-red-700 mr-28 lg:mt-6 lg:text-2xl">{errors.companyName} </p>}
                     
                     <Input placeholder="Company Address" 
                         type="text"
@@ -76,7 +74,7 @@ const CompanyRegistration = () => {
                         name="companyAddress"
                       
                     />
-                     {errors.companyAddress && <p className="text-red-700 lg:mt-6 lg:text-2xl">{errors.companyAddress} </p>}
+                     {errors.companyAddress && <p className="text-red-700 mr-20 lg:mt-6 lg:text-2xl">{errors.companyAddress} </p>}
 
                     <Input placeholder="Company Representative" 
                         type="text"
@@ -84,7 +82,7 @@ const CompanyRegistration = () => {
                         onChange={handleChange}
                         name="companyRep"
                     />
-                     {errors.companyRep && <p className="text-red-700 lg:mt-6 lg:text-2xl">{errors.companyRep} </p>}
+                     {errors.companyRep && <p className="text-red-700 lg:mt-6  lg:text-2xl">{errors.companyRep} </p>}
 
                     <Input placeholder="Occupation" 
                         type="text"
@@ -93,7 +91,7 @@ const CompanyRegistration = () => {
                         name="occupation"
                         
                     />  
-                     {errors.occupation && <p className="text-red-700 lg:mt-6 lg:text-2xl">{errors.occupation} </p>}                    
+                     {errors.occupation && <p className="text-red-700 mr-32 lg:mt-6 lg:text-2xl">{errors.occupation} </p>}                    
 
                     <Input placeholder="zedone@example.com" 
                         type="email"
@@ -102,7 +100,7 @@ const CompanyRegistration = () => {
                         name="email"
                        
                     /> 
-                     {errors.email && <p className="text-red-700 lg:mt-6 lg:text-2xl">{errors.email} </p>}
+                     {errors.email && <p className="text-red-700 mr-52 lg:mt-6 lg:text-2xl">{errors.email} </p>}
 
                      <Input placeholder="Password" 
                         type="password"
@@ -111,16 +109,10 @@ const CompanyRegistration = () => {
                         name="passwordComp"
                        
                     />     
-                     {errors.passwordComp && <p className="text-red-700 lg:mt-6 lg:text-2xl">{errors.passwordComp} </p>}
+                     {errors.passwordComp && <p className="text-red-700 mr-32 lg:mt-6 lg:text-2xl">{errors.passwordComp} </p>}
                     
 
-                    <Input placeholder="Re-Enter Password" 
-                        type="password"
-                        value={company.reEnterPasswordComp} 
-                        onChange={handleChange}
-                        name="reEnterPasswordComp"
-                       
-                    />   
+            
                     
             </ul>
             
