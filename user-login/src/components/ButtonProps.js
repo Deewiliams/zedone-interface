@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const ButtonProps = (props) => {
   return (
@@ -11,5 +12,11 @@ const ButtonProps = (props) => {
     </button>
   );
 };
+
+ButtonProps.propTypes = {
+    info: PropTypes.string.isRequired,
+  };
+  
+
 
 export default ButtonProps;

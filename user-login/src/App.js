@@ -26,7 +26,10 @@ function App() {
             <Route path="/Login">
             <Login />
             </Route>
+            <Route path="/compaylogin">
             <CompanyLogged />
+            </Route>
+            
       
 
       </BrowserRouter>
