@@ -9,24 +9,34 @@ import { Link } from 'react-router-dom'
 
 const Home = () => {
     const [clickRegister,setClickRegister] = useState(false);
+    const [clickLogin,setClickLogin] = useState(false);
     return (
         // BUttons for Logging and Registration
         <div className="h-screen-full lg:h-screen bg-gradient-to-tr from-white to-purple-500">
-       <div className="bg-purple-600 h-20 shadow-2xl">
-           <div className="flex flex-row justify-between p-4">
+       <div className="bg-purple-600 h-20 md:h-32 shadow-2xl">
+           <div className="flex flex-row justify-between p-8">
            <div>
-            <img className="w-28" src={zedone} alt="logo" />
+            <img className="w-28 md:w-60" src={zedone} alt="logo" />
            </div>
            <div className="text-white ">
-               <h1 className="hover:text-black cursor-pointer" onClick={() => setClickRegister(!clickRegister)}>Register here</h1>
-               <h1 className="hover:text-black cursor-pointer">Login</h1>
+               <h1 className="hover:text-black md:text-2xl cursor-pointer" onClick={() => setClickRegister(!clickRegister)}>Register here</h1>
+               <h1 className="hover:text-black md:text-2xl cursor-pointer" onClick={() => setClickLogin(!clickLogin)}>Login</h1>
            </div>
            </div>
        </div>
+       {/* register section drop down */}
                 {
-                    clickRegister?  <div className=" ml-60 pb-3 bg-white w-24 -mt-10">
-                    <h1 className="hover:bg-purple-200" ><Link to="/CompanyRegistration">Company</Link></h1>
-                    <h1 className="hover:bg-purple-200"><Link to="/">Personal</Link></h1>
+                    clickRegister?  <div className=" ml-60 pb-3 bg-white w-24 -mt-10 md:w-40 md:ml-auto ">
+                    <h1 className="hover:bg-purple-200 md:text-2xl" ><Link to="/CompanyRegistration">Company</Link></h1>
+                    <h1 className="hover:bg-purple-200 md:text-2xl"><Link to="/">Personal</Link></h1>
+                </div> : null
+                }
+        {/* Login section drop down */}
+
+        {
+                clickLogin?  <div className=" ml-60 pb-3 bg-white w-24 -mt-10 md:w-40 md:ml-auto ">
+                    <h1 className="hover:bg-purple-200 md:text-2xl" ><Link to="/Login">Company</Link></h1>
+                    <h1 className="hover:bg-purple-200 md:text-2xl"><Link to="/">Personal</Link></h1>
                 </div> : null
                 }
       
