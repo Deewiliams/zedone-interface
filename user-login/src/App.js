@@ -10,18 +10,19 @@ function App() {
     <div className="App">
       <BrowserRouter>
         
-          <Route exact path="/home">
+          <Route exact path="/">
             <Home />
             </Route>
-            <Route exact path="/users">
+
+            <Route path="/users">
             <UserRegistration />
             </Route>
             
-             <Route exact path="/CompanyRegistration">
+             <Route path="/CompanyRegistration">
              <CompanyRegistration />
              </Route>
 
-            <Route exact path="/Login">
+            <Route path="/Login">
             <Login />
             </Route>
             
