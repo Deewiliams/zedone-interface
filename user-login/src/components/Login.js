@@ -9,16 +9,11 @@ const initialState = {
 
 }
 
-
 const Login = () => {
 
     const [login, SetLogin] = useState(initialState);
     const [errors, setErrors] = useState({});
-    const [loginMessage, SetLoginMessage] = useState({
-        isError: false,
-        message: null,
-    });
-
+  
     function handleChange (event){
         SetLogin({...login, [event.target.name]: event.target.value});
         // console.log(login)
@@ -33,19 +28,12 @@ const Login = () => {
        headers: {
            'Content-Type': 'application/json',
        },
-   }) .then((res) =>
-   SetLoginMessage({
-     ...loginMessage,
-     message: 'You are successfully logged in',
-   }),
- )
- .catch((err) =>
- SetLoginMessage({
-     ...loginMessage,
-     isError: true,
-     message: err.message,
-   }),
- )
+    }).then( (response) => {
+       
+        return response.json();
+    }).catch( (error) => {
+      
+    });
 }
     
 
@@ -53,9 +41,7 @@ const Login = () => {
         <div className="h-screen  bg-gradient-to-tr from-white to-purple-500 flex items-center justify-center">
             <div className="bg-white shodow-2xl p-4 md:w-3/4  w-3/4 rounded-lg">
                 <img className="sm:h-72 p-4 lg:px-96" src={log} alt="login-image" />
-                <p style={{ color: loginMessage ? 'red' : 'green' }}>
-                     {loginMessage.message}
-      </p>
+               
                  <form className="space-y-8 lg:flex lg:items-center lg:justify-end">
                     <ul className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 grid-rows-4 gap-6 lg:w-3/4 bordr">
 
