@@ -1,11 +1,6 @@
 import React,{useState,} from 'react'
-import { appendErrors } from 'react-hook-form'
 import Input from '../components/Input'
 import Validation from './Validation'
-
-
-
-
 
 const initialState = {
     companyName: '',
@@ -16,7 +11,6 @@ const initialState = {
     passwordComp: '',
 
 }
-
 
 const CompanyRegistration = () => {
      const [company, setCompany] = useState(initialState);
@@ -110,10 +104,6 @@ const CompanyRegistration = () => {
                        
                     />     
                      {errors.passwordComp && <p className="text-red-700 mr-32 lg:mt-6 lg:text-2xl">{errors.passwordComp} </p>}
-                    
-
-            
-                    
             </ul>
             
           

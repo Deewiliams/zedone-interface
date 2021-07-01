@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import Loginprops from '../components/Loginprops'
+import LoginValidation from './LoginValidation'
 import log from '../images/log.png'
 
 const initialState = {
@@ -12,6 +13,7 @@ const initialState = {
 const Login = () => {
 
     const [login, SetLogin] = useState(initialState);
+    const [errors, setErrors] = useState({});
     const [loginMessage, SetLoginMessage] = useState({
         isError: false,
         message: null,
@@ -22,6 +24,8 @@ const Login = () => {
         // console.log(login)
     }
     function handleClick() {
+        // calling the state variable that updates the error state for validation
+        setErrors(LoginValidation(login));
         console.log(login); 
    fetch('http://localhost:5000/api/v1/loginCompany', {
        method: 'POST',
@@ -63,6 +67,7 @@ const Login = () => {
                     name="email"
                     
                   />
+                  {errors.email && <p className="text-red-700 mr-28 lg:mt-6 lg:text-2xl">{errors.email} </p>}
 
                    <Loginprops 
                     placeholder="Password"
@@ -71,6 +76,7 @@ const Login = () => {
                     onChange={handleChange}
                     name="passwordComp"
                   />
+                  {errors.passwordComp && <p className="text-red-700 mr-28 lg:mt-6 lg:text-2xl">{errors.passwordComp} </p>}
             </ul>        
            </form>
 
