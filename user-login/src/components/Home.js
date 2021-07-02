@@ -12,7 +12,7 @@ const Home = () => {
   const [clickRegister, setClickRegister] = useState(false);
   const [clickLogin, setClickLogin] = useState(false);
   return (
-    // BUttons for Logging and Registration
+    // Buttons for Logging and Registration
     <div className="h-screen-full lg:h-screen bg-gradient-to-tr from-white to-purple-500">
       <div className="bg-purple-600 h-20 md:h-32 shadow-2lg">
         <div className="flex flex-row justify-between p-8">
@@ -43,14 +43,7 @@ const Home = () => {
       {/* Login section drop down */}
 
       {clickLogin ? (
-        <div className=" ml-60 pb-3 bg-white w-24 -mt-1 md:w-40 md:ml-auto ">
-          <h1 className="hover:bg-purple-200 md:text-2xl">
-            <Link to="/Login">Company</Link>
-          </h1>
-          <h1 className="hover:bg-purple-200 md:text-2xl">
-            <Link to="/">Personal</Link>
-          </h1>
-        </div>
+        <HomeStateProps company="company" title="personal" />
       ) : null}
 
       {/* ****************Landing Page Navbars******************** */}
@@ -73,26 +66,13 @@ const Home = () => {
 
       <div>
         <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 p-4 ">
-          <HomeProps 
-            image={transaction} 
-            title="Online Transaction"
-           />
+          <HomeProps image={transaction} title="Online Transaction" />
 
-          <HomeProps 
-            image={subscriptions}
-            title="Subscriptions Payments" 
-           />
-          
-          <HomeProps 
-            image={mobile} 
-            title="Mobile Payments" 
-            />
+          <HomeProps image={subscriptions} title="Subscriptions Payments" />
 
-          <HomeProps 
-            image={product} 
-            title="Product Payments"
-             />
+          <HomeProps image={mobile} title="Mobile Payments" />
 
+          <HomeProps image={product} title="Product Payments" />
         </ul>
       </div>
     </div>

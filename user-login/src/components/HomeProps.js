@@ -17,9 +17,8 @@ const HomeProps = (props) => {
 };
 
 HomeProps.PropsType = {
-    image: PropTypes.node.required,
-    title: PropTypes.string.required,
-
+  image: PropTypes.node.required,
+  title: PropTypes.string.required,
 };
 
 export default HomeProps;
