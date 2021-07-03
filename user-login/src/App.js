@@ -7,6 +7,7 @@ import CompanyLogged from "./components/CompanyLogged";
 import HeaderNav from "./components/HeaderNav";
 
 import "./App.css";
+import Online from "./components/Online";
 
 function App() {
   return (
@@ -29,8 +30,9 @@ function App() {
         <Route path="/Login">
           <Login />
         </Route>
+        <Online />
         {/* <Route path="/compaylogin"> */}
-        <CompanyLogged />
+        {/* <CompanyLogged /> */}
         {/* </Route> */}
       </BrowserRouter>
     </div>
