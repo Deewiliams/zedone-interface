@@ -30,11 +30,11 @@ const MainTransaction = (props) => {
   );
 };
 
-// MainTransaction.prototype = {
-//   image: PropsType.node.isRequired,
-//   title: PropsType.string.isRequired,
-//   secondTitle: PropsType.string.isRequired,
-//   paragraph: PropsType.string.isRequired,
+MainTransaction.prototype = {
+  image: PropsType.node.isRequired,
+  title: PropsType.string.isRequired,
+  secondTitle: PropsType.string.isRequired,
+  paragraph: PropsType.string.isRequired,
 
-// }
+}
 export default MainTransaction;
