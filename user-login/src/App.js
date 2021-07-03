@@ -5,9 +5,10 @@ import Login from "./components/Login";
 import UserRegistration from "./components/UserRegistration";
 import CompanyLogged from "./components/CompanyLogged";
 import HeaderNav from "./components/HeaderNav";
-
-import "./App.css";
 import Online from "./components/Online";
+import "./App.css";
+
+
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       
       <BrowserRouter>
       <HeaderNav />
+     
         <Route exact path="/">
           <Home />
         </Route>
@@ -30,7 +32,9 @@ function App() {
         <Route path="/Login">
           <Login />
         </Route>
+        <Route path="online">
         <Online />
+        </Route>
         {/* <Route path="/compaylogin"> */}
         {/* <CompanyLogged /> */}
         {/* </Route> */}
