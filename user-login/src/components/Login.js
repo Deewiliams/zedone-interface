@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import Loginprops from '../components/Loginprops'
 import log from '../images/log.png'
-import { Link } from "react-router-dom";
+
 
 const initialState = {
     email: '',
