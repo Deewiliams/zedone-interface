@@ -8,15 +8,12 @@ import HeaderNav from "./components/HeaderNav";
 import Online from "./components/Online";
 import "./App.css";
 
-
-
 function App() {
   return (
     <div className="App">
-      
       <BrowserRouter>
-      <HeaderNav />
-     
+        <HeaderNav />
+
         <Route exact path="/">
           <Home />
         </Route>
@@ -32,12 +29,14 @@ function App() {
         <Route path="/Login">
           <Login />
         </Route>
+
         <Route path="online">
-        <Online />
+          <Online />
         </Route>
-        {/* <Route path="/compaylogin"> */}
-        {/* <CompanyLogged /> */}
-        {/* </Route> */}
+
+        <Route path="/company-login">
+          <CompanyLogged />
+        </Route>
       </BrowserRouter>
     </div>
   );

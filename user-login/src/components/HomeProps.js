@@ -10,15 +10,15 @@ const HomeProps = (props) => {
         <div className="mt-16">
           <h1 className="text-2xl">{props.title}</h1>
         </div>
-        <ButtonProps info="More Information" />
+        <ButtonProps info="More Information"/>
       </li>
     </div>
   );
 };
 
-HomeProps.PropsType = {
-  image: PropTypes.node.required,
-  title: PropTypes.string.required,
+HomeProps.propTypes = {
+  image: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default HomeProps;

@@ -1,5 +1,5 @@
 import React from "react";
-import PropsType from "prop-types";
+import PropTypes from "prop-types";
 
 const MainTransaction = (props) => {
   return (
@@ -30,11 +30,11 @@ const MainTransaction = (props) => {
   );
 };
 
-MainTransaction.prototype = {
-  image: PropsType.node.isRequired,
-  title: PropsType.string.isRequired,
-  secondTitle: PropsType.string.isRequired,
-  paragraph: PropsType.string.isRequired,
+MainTransaction.propTypes = {
+  image: PropTypes.node.isRequired,
+  title: PropTypes.string.isRequired,
+  secondTitle: PropTypes.string.isRequired,
+  paragraph: PropTypes.string.isRequired,
 
 }
 export default MainTransaction;

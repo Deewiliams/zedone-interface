@@ -10,26 +10,15 @@ const Home = () => {
     <div className="h-screen-full lg:h-screen bg-gradient-to-tr from-white to-purple-500">
       <div>
         <ul className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 p-4 ">
-          <HomeProps image={transaction}
-           title="Online Transaction" 
-           />
+          <HomeProps image={transaction} title="Online Transaction" />
 
-          <HomeProps image={subscriptions} 
-          title="Subscriptions Payments" 
-          />
+          <HomeProps image={subscriptions} title="Subscriptions Payments" />
 
-          <HomeProps image={mobile} 
-          title="Mobile Payments" 
-          />
+          <HomeProps image={mobile} title="Mobile Payments" />
 
-          <HomeProps 
-          image={product} 
-          title="Product Payments"
-          />
-
+          <HomeProps image={product} title="Product Payments" />
         </ul>
       </div>
-      
     </div>
   );
 };
