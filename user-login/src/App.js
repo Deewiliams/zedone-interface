@@ -10,6 +10,7 @@ import Subscriptions from "./components/Subscriptions";
 import "./App.css";
 import PageNotFound from "./components/PageNotFound";
 import AboutUs from "./components/AboutUs";
+import Mobile from "./components/Mobile"
 
 function App() {
   return (
@@ -42,6 +43,10 @@ function App() {
           </Route>
           <Route exact path="/subscriptions">
             <Subscriptions />
+          </Route>
+
+          <Route path="/mobile">
+            <Mobile />
           </Route>
 
           <Route exact path="/company-login">

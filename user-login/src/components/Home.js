@@ -24,9 +24,14 @@ const Home = () => {
             title="Subscriptions Payments"
           />
 
-          <HomeProps link="/drf" image={mobile} title="Mobile Payments" />
+          <HomeProps link="/mobile" 
+          image={mobile} 
+          title="Mobile Payments"/>
 
-          <HomeProps link="/xyn" image={product} title="Product Payments" />
+          <HomeProps link="/xyn" 
+          image={product}
+           title="Product Payments"/>
+
         </ul>
       </div>
     </div>
