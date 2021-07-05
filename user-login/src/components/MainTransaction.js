@@ -7,7 +7,7 @@ const MainTransaction = (props) => {
       <div className="grid grid-col-1 gap-8 p-4 lg:p-12 md:grid-cols-2">
         <h1 className="bg-white mt-20 rounded-lg">
           <div className="">
-            <img className="mt-4" src={props.image} alt="transaction image" />
+            <img className="mt-4" src={props.image} alt="transaction" />
             <p className="mb-4 text-2xl font-bold lg:text-4xl">
               {props.title}
               {/* Online Transaction */}

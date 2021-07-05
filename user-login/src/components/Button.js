@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 const ButtonProps = (props) => {
   let history = useHistory();
 
-  function handleClick() {
+  function handleClick () {
     history.push(props.link)
   }
   return (

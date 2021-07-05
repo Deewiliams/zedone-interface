@@ -3,7 +3,7 @@ import transaction from "../images/transaction.png";
 import mobile from "../images/mobile.png";
 import subscriptions from "../images/Subscriptions.png";
 import product from "../images/product.png";
-import HomeProps from "./HomeProps";
+import HomeProps from "./HomeCardLink";
 import NavbarTitle from "./NavbarTitle";
 
 const Home = () => {
@@ -25,13 +25,10 @@ const Home = () => {
           />
 
           <HomeProps link="/mobile" 
-          image={mobile} 
-          title="Mobile Payments"/>
+            image={mobile}
+            title="Mobile Payments" />
 
-          <HomeProps link="/product" 
-          image={product}
-           title="Product Payments"/>
-
+          <HomeProps link="/product" image={product} title="Product Payments" />
         </ul>
       </div>
     </div>
@@ -39,4 +36,3 @@ const Home = () => {
 };
 
 export default Home;
-

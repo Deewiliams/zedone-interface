@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import HomeStateProps from "./HomeStateProps";
+import HomeStateProps from "./HomeDropLinks";
 import zedone from "../images/zedone_logo_web.png";
 import Navbar from "./Navbar";
 

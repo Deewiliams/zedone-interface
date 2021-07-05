@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Input from "../components/Input";
-import Validation from "./Validation";
+import Validation from "../Validations/Validation";
 
 const initialState = {
   companyName: "",
@@ -17,8 +17,7 @@ const CompanyRegistration = () => {
   const [responseMessage, setResponseMessage] = useState({
     isError: false,
     message: null,
-  })
-
+  });
 
   function handleChange(event) {
     setCompany({ ...company, [event.target.name]: event.target.value });
@@ -28,7 +27,6 @@ const CompanyRegistration = () => {
   function handleClick() {
     setErrors(Validation(company));
     console.log(company);
-
 
     fetch("http://localhost:5000/api/v1/registerCompany", {
       method: "POST",
@@ -148,7 +146,6 @@ const CompanyRegistration = () => {
                 lg:px-20 lg:text-3xl hover:bg-purple-600 
                 hover:text-white rounded-lg
                 "
-          role="submit"
           onClick={handleClick}
         >
           Login
