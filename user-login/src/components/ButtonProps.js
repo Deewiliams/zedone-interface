@@ -24,6 +24,7 @@ const ButtonProps = (props) => {
 
 ButtonProps.propTypes = {
   info: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default ButtonProps;

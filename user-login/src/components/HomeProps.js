@@ -19,6 +19,7 @@ const HomeProps = (props) => {
 HomeProps.propTypes = {
   image: PropTypes.node.isRequired,
   title: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default HomeProps;

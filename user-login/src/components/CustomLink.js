@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PropsType from "prop-types";
+import PropTypes from "prop-types";
 
 const CustomLink = (props) => {
   return (
@@ -10,8 +10,8 @@ const CustomLink = (props) => {
   );
 };
 
-CustomLink.prototype = {
-  to: PropsType.string.isRequired,
-  title: PropsType.string.isRequired,
+CustomLink.propTypes = {
+  to: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 export default CustomLink;

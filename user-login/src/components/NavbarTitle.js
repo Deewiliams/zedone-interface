@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from "prop-types";
 
 const NavbarTitle = (props) => {
     return (
@@ -8,6 +9,9 @@ const NavbarTitle = (props) => {
         </h1>
       </div>
     )
+}
+NavbarTitle.propTypes = {
+    title: PropTypes.string.isRequired,
 }
 
 export default NavbarTitle

@@ -28,7 +28,14 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "space-before-function-paren": 1,
+      "react/prop-types": 2,
+      "react/jsx-handler-names": 1,
+      "react/jsx-fragments": 1,
+      "react/no-unused-prop-types": 2
+    }
   },
   "browserslist": {
     "production": [

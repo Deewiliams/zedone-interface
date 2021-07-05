@@ -15,7 +15,7 @@ const HomeStateProps = (props) => {
 
 HomeStateProps.propTypes = {
   company: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+ 
 };
 
 export default HomeStateProps;
