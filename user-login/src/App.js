@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home";
 import CompanyRegistration from "./components/CompanyRegistration";
 import Login from "./components/Login";
@@ -6,47 +6,56 @@ import UserRegistration from "./components/UserRegistration";
 import CompanyLogged from "./components/CompanyLogged";
 import HeaderNav from "./components/HeaderNav";
 import Online from "./components/Online";
-import Subscriptions from "./components/Subscriptions"
+import Subscriptions from "./components/Subscriptions";
 import "./App.css";
 import PageNotFound from "./components/PageNotFound";
+import AboutUs from "./components/AboutUs";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <HeaderNav />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
 
-        <Route exact path="/">
-          <Home />
-        </Route>
+          <Route exact path="/home">
+            <Home />
+          </Route>
 
-        <Route exact path="/home">
-          <Home />
-        </Route>
+          <Route exact path="/users">
+            <UserRegistration />
+          </Route>
 
-        <Route path="/users">
-          <UserRegistration />
-        </Route>
+          <Route exact path="/CompanyRegistration">
+            <CompanyRegistration />
+          </Route>
 
-        <Route path="/CompanyRegistration">
-          <CompanyRegistration />
-        </Route>
+          <Route exact path="/Login">
+            <Login />
+          </Route>
 
-        <Route path="/Login">
-          <Login />
-        </Route>
+          <Route exact path="/online">
+            <Online />
+          </Route>
+          <Route exact path="/subscriptions">
+            <Subscriptions />
+          </Route>
 
-        <Route path="online">
-          <Online />
-        </Route>
-        {/* <Subscriptions /> */}
+          <Route exact path="/company-login">
+            <CompanyLogged />
+          </Route>
+          
+          <Route path="/about">
+          <AboutUs />
+          </Route>
 
-        <Route path="/company-login">
-          <CompanyLogged />
-        </Route>
-        <Route path="*">
-          <PageNotFound />
-        </Route>
+          <Route>
+            <PageNotFound />
+          </Route>
+        </Switch>
       </BrowserRouter>
     </div>
   );

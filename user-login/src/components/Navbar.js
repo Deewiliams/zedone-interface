@@ -8,7 +8,7 @@ const Navbar = () => {
         <h1 className="hover:text-blue-600">
           <Link to="/home">Home</Link>
         </h1>
-        <h1 className="hover:text-blue-600">About us</h1>
+        <h1 className="hover:text-blue-600"><Link to="/about">About us</Link></h1>
         <h1 className="hover:text-blue-600">Feedback</h1>
         <h1 className="hover:text-blue-600">Contact</h1>
       </div>

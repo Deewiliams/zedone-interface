@@ -3,6 +3,7 @@ import Loginprops from "../components/Loginprops";
 import logMe from "../images/login.svg";
 import { useHistory } from "react-router-dom";
 import LoginValidation from "./LoginValidation";
+import { Link } from "react-router-dom";
 
 const initialState = {
   email: "",
@@ -20,13 +21,16 @@ const Login = () => {
   }
   function handleClick() {
     setErrors(LoginValidation(login));
-    history.push("/company-login");
+    // history.push("/company-login");
+  }
+  function handleSubmit () {
+      history.push("/CompanyRegistration")
   }
 
   return (
     <div className="h-screen bg-gradient-to-tr from-white to-purple-500 flex items-center justify-center">
       <div className="bg-white  shodow-2xl p-4 mb-10 md:w-2/4 mt-24 rounded-lg">
-        <img className="h-52 p-4 m-auto lg:ml-96" src={logMe} alt="login-image" />
+        <img className="h-52 p-4 lg:ml-96 image  " src={logMe} alt="login-image" />
 
         <form className="space-y-8 lg:flex lg:items-center lg:justify-end">
           <ul className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 grid-rows-4 gap-6 lg:w-3/4 bordr">
@@ -82,6 +86,8 @@ const Login = () => {
                 lg:px-20  hover:bg-green-600 
                 hover:text-white rounded-lg
                 "
+                type="submit"
+                onClick={handleSubmit}
           >
             Create New Business Account
           </button>
