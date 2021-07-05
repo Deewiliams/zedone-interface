@@ -11,6 +11,7 @@ import "./App.css";
 import PageNotFound from "./components/PageNotFound";
 import AboutUs from "./components/AboutUs";
 import Mobile from "./components/Mobile"
+import Product from "./components/Product";
 
 function App() {
   return (
@@ -55,6 +56,10 @@ function App() {
           
           <Route path="/about">
           <AboutUs />
+          </Route>
+
+          <Route path="/product">
+            <Product />
           </Route>
 
           <Route>

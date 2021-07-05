@@ -28,7 +28,7 @@ const Home = () => {
           image={mobile} 
           title="Mobile Payments"/>
 
-          <HomeProps link="/xyn" 
+          <HomeProps link="/product" 
           image={product}
            title="Product Payments"/>
 
