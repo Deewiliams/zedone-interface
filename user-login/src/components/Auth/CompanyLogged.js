@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
-import zedone from "../images/zedone_logo_web.png";
-import barmenu from "../images/menu.svg";
+import zedone from "../../images/zedone_logo_web.png";
+import barmenu from "../../images/menu.svg";
 
 const CompanyLogged = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -49,7 +49,6 @@ const CompanyLogged = () => {
 
             {/* social media icons */}
             <div className="mt-96 space-x-4  text-red-500  ">
-              <h1></h1>
               <FaFacebookF className="mr-10" />
               <h1 className="-mt-5 hover:text-gray-500 cursor-pointer">
                 Like us on Facebook

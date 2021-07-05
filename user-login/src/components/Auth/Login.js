@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import Loginprops from "../components/Login";
-import logMe from "../images/login.svg";
+import Loginprops from "../Login";
+import logMe from "../../images/login.svg";
 import { useHistory } from "react-router-dom";
-import LoginValidation from "../Validations/LoginValidation";
-import { Link } from "react-router-dom";
+import LoginValidation from "../../Validations/LoginValidation";
 
 const initialState = {
   email: "",
@@ -15,22 +14,26 @@ const Login = () => {
   const [login, SetLogin] = useState(initialState);
   const [errors, setErrors] = useState({});
 
-  function handleChange(event) {
+  function handleChange (event) {
     SetLogin({ ...login, [event.target.name]: event.target.value });
     // console.log(login)
   }
-  function handleClick() {
+  function handleClick () {
     setErrors(LoginValidation(login));
     // history.push("/company-login");
   }
   function handleSubmit () {
-      history.push("/CompanyRegistration")
+    history.push("/CompanyRegistration");
   }
 
   return (
     <div className="h-screen bg-gradient-to-tr from-white to-purple-500 flex items-center justify-center">
       <div className="bg-white  shodow-2xl p-4 mb-10 md:w-2/4 mt-24 rounded-lg">
-        <img className="h-52 p-4 lg:ml-96 image  " src={logMe} alt="login-image" />
+        <img
+          className="h-52 p-4 lg:ml-96 image  "
+          src={logMe}
+          alt="login-log"
+        />
 
         <form className="space-y-8 lg:flex lg:items-center lg:justify-end">
           <ul className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 grid-rows-4 gap-6 lg:w-3/4 bordr">
@@ -70,7 +73,6 @@ const Login = () => {
                 lg:px-20 lg:text-3xl lg:-mt-32 hover:bg-purple-600 
                 hover:text-white rounded-lg
                 "
-            role="submit"
             onClick={handleClick}
           >
             Login
@@ -86,8 +88,8 @@ const Login = () => {
                 lg:px-20  hover:bg-green-600 
                 hover:text-white rounded-lg
                 "
-                type="submit"
-                onClick={handleSubmit}
+            type="submit"
+            onClick={handleSubmit}
           >
             Create New Business Account
           </button>

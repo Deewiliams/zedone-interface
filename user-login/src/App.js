@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/HomeCard";
-import CompanyRegistration from "./Auth/CompanyRegistration";
-import Login from "./Auth/Login";
+import CompanyRegistration from "./components/Auth/CompanyRegistration";
+import Login from "./components/Auth/Login";
 import UserRegistration from "./components/UserRegistration";
-import CompanyLogged from "./Auth/CompanyLogged";
+import CompanyLogged from "./components/Auth/CompanyLogged";
 import HeaderNav from "./components/HeaderNav";
 import Online from "./Pages/Online";
 import Subscriptions from "./Pages/Subscriptions";
@@ -13,7 +13,7 @@ import AboutUs from "./Pages/AboutUs";
 import Mobile from "./Pages/Mobile"
 import Product from "./Pages/Product";
 
-function App() {
+function App () {
   return (
     <div className="App">
       <BrowserRouter>

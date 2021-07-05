@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import transaction from "../images/transaction.png";
 import mobile from "../images/mobile.png";
 import subscriptions from "../images/Subscriptions.png";

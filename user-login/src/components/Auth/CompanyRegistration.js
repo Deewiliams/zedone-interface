@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Input from "../components/Input";
-import Validation from "../Validations/Validation";
+import Input from "../Input";
+import Validation from "../../Validations/Validation";
 
 const initialState = {
   companyName: "",
@@ -14,17 +14,13 @@ const initialState = {
 const CompanyRegistration = () => {
   const [company, setCompany] = useState(initialState);
   const [errors, setErrors] = useState({});
-  const [responseMessage, setResponseMessage] = useState({
-    isError: false,
-    message: null,
-  });
-
-  function handleChange(event) {
+ 
+  function handleChange (event) {
     setCompany({ ...company, [event.target.name]: event.target.value });
     //  console.log(company);
   }
 
-  function handleClick() {
+  function handleClick () {
     setErrors(Validation(company));
     console.log(company);
 
