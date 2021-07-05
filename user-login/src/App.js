@@ -6,7 +6,9 @@ import UserRegistration from "./components/UserRegistration";
 import CompanyLogged from "./components/CompanyLogged";
 import HeaderNav from "./components/HeaderNav";
 import Online from "./components/Online";
+import Subscriptions from "./components/Subscriptions"
 import "./App.css";
+import PageNotFound from "./components/PageNotFound";
 
 function App() {
   return (
@@ -15,6 +17,10 @@ function App() {
         <HeaderNav />
 
         <Route exact path="/">
+          <Home />
+        </Route>
+
+        <Route exact path="/home">
           <Home />
         </Route>
 
@@ -33,9 +39,13 @@ function App() {
         <Route path="online">
           <Online />
         </Route>
+        {/* <Subscriptions /> */}
 
         <Route path="/company-login">
           <CompanyLogged />
+        </Route>
+        <Route path="*">
+          <PageNotFound />
         </Route>
       </BrowserRouter>
     </div>

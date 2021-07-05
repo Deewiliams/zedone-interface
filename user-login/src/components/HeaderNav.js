@@ -8,7 +8,7 @@ const HeaderNav = () => {
   const [clickLogin, setClickLogin] = useState(false);
   return (
     // Buttons for Logging and Registration
-    <div>
+    <div className="bg-purple-600">
       <div className="bg-purple-600 h-20 md:h-32 shadow-2lg">
         <div className="flex flex-row justify-between p-8">
           <div>

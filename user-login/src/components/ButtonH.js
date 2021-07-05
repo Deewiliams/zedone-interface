@@ -1,6 +1,6 @@
 import React from 'react'
 
-const campanyReSuccessForm = () => {
+const ButtonH = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const campanyReSuccessForm = () => {
     )
 }
 
-export default campanyReSuccessForm
+export default ButtonH

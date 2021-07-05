@@ -48,12 +48,12 @@ const CompanyRegistration = () => {
 
   return (
     <div className="h-screen bg-gradient-to-tr from-white to-purple-500 flex items-center justify-center">
-      <div className="bg-gray-200 shadow-2xl p-4 w-2/3 rounded-lg">
+      <div className="bg-white shadow-2xl p-4 -mt-20 rounded-lg">
         <h1
-          className="sm:text-lg font-bold mb-10 text-white
+          className="text-lg px-4 font-bold mb-10 text-white
              md:font-bold md:text-3xl mx-1 
              uppercase font-sans
-             bg-purple-500 h-16
+             bg-purple-500 h-10
              rounded-lg
              "
         >
@@ -61,7 +61,7 @@ const CompanyRegistration = () => {
         </h1>
 
         <form className="space-y-8" onSubmit={handleClick}>
-          <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 grid-rows-4 grid-flow-row gap-6">
+          <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 grid-rows-4 grid-flow-row gap-6 -mt-6">
             <Input
               placeholder="Company Name"
               type="text"
@@ -70,7 +70,7 @@ const CompanyRegistration = () => {
               name="companyName"
             />
             {errors.companyName && (
-              <p className="text-red-700 mr-28 lg:mt-6 lg:text-2xl">
+              <p className="text-red-700 text-xs space-y-2 mr-28 lg:mt-6 lg:text-lg">
                 {errors.companyName}
               </p>
             )}
@@ -83,7 +83,7 @@ const CompanyRegistration = () => {
               name="companyAddress"
             />
             {errors.companyAddress && (
-              <p className="text-red-700 mr-20 lg:mt-6 lg:text-2xl">
+              <p className="text-red-700 text-xs space-y-2 mr-28 lg:mt-6 lg:text-lg">
                 {errors.companyAddress}
               </p>
             )}
@@ -96,7 +96,7 @@ const CompanyRegistration = () => {
               name="companyRep"
             />
             {errors.companyRep && (
-              <p className="text-red-700 lg:mt-6  lg:text-2xl">
+              <p className="text-red-700 text-xs space-y-2 mr-28 lg:mt-6 lg:text-lg">
                 {errors.companyRep}
               </p>
             )}
@@ -109,7 +109,7 @@ const CompanyRegistration = () => {
               name="occupation"
             />
             {errors.occupation && (
-              <p className="text-red-700 mr-32 lg:mt-6 lg:text-2xl">
+              <p className="text-red-700 text-xs space-y-2 mr-28 lg:mt-6 lg:text-lg">
                 {errors.occupation}
               </p>
             )}
@@ -122,7 +122,7 @@ const CompanyRegistration = () => {
               name="email"
             />
             {errors.email && (
-              <p className="text-red-700 mr-52 lg:mt-6 lg:text-2xl">
+              <p className="text-red-700 text-xs space-y-2 mr-28 lg:mt-6 lg:text-lg">
                 {errors.email}
               </p>
             )}
@@ -135,7 +135,7 @@ const CompanyRegistration = () => {
               name="passwordComp"
             />
             {errors.passwordComp && (
-              <p className="text-red-700 mr-32 lg:mt-6 lg:text-2xl">
+              <p className="text-red-700 text-xs space-y-2 mr-28 lg:mt-6 lg:text-lg">
                 {errors.passwordComp}
               </p>
             )}
@@ -143,8 +143,8 @@ const CompanyRegistration = () => {
         </form>
         <button
           className="bg-purple-500 
-                text-gray-100 sm:text-2xl lg:-w-40 sm:py- sm:px-8 
-                d:py-4 md:px-10 md:text-lg lg:py-4 lg:w-2/3
+                text-gray-100 text-2xl lg:-w-40 mt-4 px-32 py-2
+                 md:px-36 md:text-4xl md:-mt-20 lg:py-4 lg:w-2/3
                 lg:px-20 lg:text-3xl hover:bg-purple-600 
                 hover:text-white rounded-lg
                 "
