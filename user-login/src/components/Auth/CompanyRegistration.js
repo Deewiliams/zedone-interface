@@ -21,16 +21,15 @@ const message = {
 const CompanyRegistration = () => {
   let history = useHistory();
   const [company, setCompany] = useState(initialState);
-  const [errors, setErrors] = useState({}); // validation state => errors: {company }
+  const [errors, setErrors] = useState({});
   const [messageError, setMessageError] = useState(message);
 
-
-  function handleChange(event) {
+  function handleChange (event) {
     setCompany({ ...company, [event.target.name]: event.target.value });
     //  console.log(company);
   }
 
-  function handleClick() {
+  function handleClick () {
     setErrors(Validation(company));
     console.log(company);
 
@@ -42,7 +41,7 @@ const CompanyRegistration = () => {
       },
     })
       .then((response) => {
-        console.log(response)
+        console.log(response);
         setMessageError({
           ...messageError,
           message: "you have successfully registered as a company",
