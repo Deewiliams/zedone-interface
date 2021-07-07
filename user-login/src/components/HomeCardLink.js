@@ -5,8 +5,8 @@ import PropTypes from "prop-types";
 const HomeProps = (props) => {
   return (
     <div>
-      <li className="bg-white mt-20  shadow rounded-lg">
-        <img className="p-2" src={props.image} alt="picure" />
+      <li className="bg-white mt-2 lg:-mt-6 shadow-xl rounded-lg">
+        <img className="p-2" src={props.image} alt="pictures" />
         <div className="mt-16">
           <h1 className="text-2xl">{props.title}</h1>
         </div>

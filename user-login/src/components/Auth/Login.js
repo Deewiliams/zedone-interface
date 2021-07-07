@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Loginprops from "../Login";
 import logMe from "../../images/login.svg";
-import { useHistory } from "react-router-dom";
 import LoginValidation from "../../Validations/LoginValidation";
+import { useHistory } from "react-router-dom";
+import Navbar from "../Navbar";
 
 const initialState = {
   email: "",
@@ -27,10 +28,12 @@ const Login = () => {
   }
 
   return (
-    <div className="h-screen bg-gradient-to-tr from-white to-purple-500 flex items-center justify-center">
+    <div className="bg-gradient-to-tr from-white to-purple-500">
+      <Navbar />
+      <div className="h-screen bg-gradient-to-tr from-white to-purple-500 flex items-center justify-center">
       <div className="bg-white  shodow-2xl p-4 mb-10 md:w-2/4 mt-24 rounded-lg">
         <img
-          className="h-52 p-4 lg:ml-96 image  "
+          className="h-52 p-4  lg:h-80 "
           src={logMe}
           alt="login-log"
         />
@@ -95,6 +98,7 @@ const Login = () => {
           </button>
         </div>
       </div>
+    </div>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Input from "../Input";
 import Validation from "../../Validations/Validation";
+import { useHistory } from "react-router";
+import Navbar from "../Navbar";
 
 const initialState = {
   companyName: "",
@@ -12,9 +14,17 @@ const initialState = {
 };
 
 const CompanyRegistration = () => {
+  let history = useHistory();
   const [company, setCompany] = useState(initialState);
   const [errors, setErrors] = useState({});
- 
+  const [messageError, setMessageError] = useState({
+    isError: false,
+    message: null,
+  });
+  function handleSubmit () {
+    history.push("/Login")
+  }
+
   function handleChange (event) {
     setCompany({ ...company, [event.target.name]: event.target.value });
     //  console.log(company);
@@ -32,17 +42,40 @@ const CompanyRegistration = () => {
       },
     })
       .then((response) => {
-        console.log(response);
-        return response.json();
+        setMessageError({
+          ...messageError,
+          message: 'you have sucessfully registered as a company'
+            // <div>
+            //   'you have sucessfully registered as a company'
+            //   <button onClick={handleSubmit} className="bg-blue-100 px-4  ml-4 text-sm hover:bg-red-500 hover:text-white">
+            //     Click to login
+            //   </button>
+            // </div>
+          // ),
+        });
       })
       .catch((error) => {
-        console.log(error);
+        setMessageError({
+          ...messageError,
+          message: error.message,
+        });
       });
   }
 
   return (
-    <div className="h-screen bg-gradient-to-tr from-white to-purple-500 flex items-center justify-center">
+    <div className="bg-gradient-to-tr from-white to-purple-500 ">
+      <Navbar />
+      <div className="h-screen bg-gradient-to-tr from-white to-purple-500 flex items-center justify-center">
       <div className="bg-white shadow-2xl p-4 -mt-20 rounded-lg">
+        <p style={{ color: messageError.isError ? "blue" : "green" }}>
+        {messageError.message}
+        </p>
+        {
+        messageError ? null : (<button onClick={handleSubmit} className="bg-blue-100 px-4  ml-4 text-sm hover:bg-red-500 hover:text-white">
+            Click here    
+        </button>) 
+        }
+        
         <h1
           className="text-lg px-4 font-bold mb-10 text-white
              md:font-bold md:text-3xl mx-1 
@@ -53,9 +86,9 @@ const CompanyRegistration = () => {
         >
           Company Registration Form
         </h1>
-
+       
         <form className="space-y-8" onSubmit={handleClick}>
-          <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 grid-rows-4 grid-flow-row gap-6 -mt-6">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 grid-rows-4  gap-6 -mt-6">
             <Input
               placeholder="Company Name"
               type="text"
@@ -147,6 +180,7 @@ const CompanyRegistration = () => {
           Login
         </button>
       </div>
+    </div>
     </div>
   );
 };

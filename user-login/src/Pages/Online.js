@@ -15,7 +15,7 @@ const Online = () => {
                 transaction process (OLTP) is secure and password protected. Three steps involved 
                 in the online transaction are Registration, Placing an order, and, Payment. "
            /> 
-             <Navbar />
+         
         </div>
     )
 }
