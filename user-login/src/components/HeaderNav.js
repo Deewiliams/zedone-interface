@@ -37,11 +37,11 @@ const HeaderNav = () => {
       </div>
       {/* register section drop down */}
 
-      {clickRegister ? <HomeStateProps company="company" title="personal" /> : null}
+      {clickRegister ? <HomeStateProps company="company" personal="company" /> : null}
       {/* Login section drop down */}
 
       {clickLogin ? (
-        <HomeStateProps company="company" title="personal" />
+        <HomeStateProps company="personal" personal="personal" />
       ) : null}
     </div>
   );
