@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import HomeStateProps from "./HomeDropLinks";
 import zedone from "../images/zedone_logo_web.png";
+import { Link } from "react-router-dom";
 
 const HeaderNav = () => {
   const [clickRegister, setClickRegister] = useState(false);
@@ -11,7 +12,9 @@ const HeaderNav = () => {
       <div className="bg-purple-600 h-28 md:h-32 shadow-2lg">
         <div className="flex flex-row justify-between p-8">
           <div>
+          <Link to="/home">
             <img className="w-28 md:w-60" src={zedone} alt="logo" />
+           </Link>
           </div>
           {/* navbar section drop drown */}
           <div className="text-white ">
@@ -34,7 +37,7 @@ const HeaderNav = () => {
       </div>
       {/* register section drop down */}
 
-      {clickRegister ? <HomeStateProps company="comapany" title="personal" /> : null}
+      {clickRegister ? <HomeStateProps company="company" title="personal" /> : null}
       {/* Login section drop down */}
 
       {clickLogin ? (

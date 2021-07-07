@@ -4,7 +4,7 @@ import Navbar from "./Navbar";
 
 const MainTransaction = (props) => {
   return (
-    <div className="h-screen bg-gradient-to-tr from-white to-purple-500">
+    <div className="h-screen-full h-screen bg-gradient-to-tr from-white to-purple-500">
       <Navbar />
       <div className="grid grid-col-1 gap-2 p-4 -mt-16 lg:p-12 md:grid-cols-2">
         <h1 className="bg-white mt-20 rounded-lg">
