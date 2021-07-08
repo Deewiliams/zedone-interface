@@ -2,15 +2,39 @@ import React,{useState} from 'react'
 import Input from './Input'
 import Buttonprops from './Buttonprops'
 
+const initialState = {
+    fullname:'',
+    dateofBirth:'',
+    nrcPassportNo:'',
+    img:'',
+    phonenumber:'',
+    pin:'',
+    address:'',
+    sim:'',
+}
 
 const UserRegistration = () => {
-        const [fullName, setFullName] = useState("");  
-        const [dateOfBirth, setDateOfBirth] = useState("");
-        const [nrcPassportNo, setNrcPassportNo] = useState("");
-        const [photo, setPhoto] = useState("");
-        const [phoneNumber, setPhoneNumber] = useState(""); 
-        const [pin, setPin] = useState("");
-        const [address, SetAddress] = useState("");
+    const [register, setRegister] = useState(initialState);
+
+    function handleChange (event){
+        setRegister({...register, [event.target.name]: event.target.value});
+        
+    }
+
+    function handleClick () {
+        console.log(register);
+        fetch('http://localhost:5600/api/v1/registerClient',{
+        method: 'POST',
+        body: register,
+        headers: {
+            'Content-Type': 'appication/json',
+        },
+        }).then((response)=> {
+            return response.json();
+        }).catch((error) => {
+
+        });
+    }
     return (
         <div className="h-screen bg-gradient-to-tr from-white to-purple-500 flex items-center justify-center">
         <div className="bg-gray-200 shadow-2xl p-4 w-2/3 rounded-lg">
@@ -22,65 +46,83 @@ const UserRegistration = () => {
          ">
         User Registration Form</h1>
 
-        <form className="space-y-8">
+        <form className="space-y-8" onSubmit={handleClick}>
         <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 grid-rows-4 grid-flow-row gap-6">
           
                <Input placeholder="Full Name" 
                     type="text"
-                    value={fullName} onChange={event => setFullName(event.target.value)}
+                    value={register.fullname}
+                    onChange={handleChange}
+                    name="fullname"
                 />
 
                 <Input placeholder="Date of Birth" 
                     type="date"
-                    value={dateOfBirth} onChange={event => setDateOfBirth(event.target.value)}
+                    value={register.dateofBirth} 
+                    onChange={handleChange}
+                    name="dateofBirth"
                     
                 />
 
                 <Input placeholder="NRC/Passport No." 
                     type="text"
-                    value={nrcPassportNo} onChange={event => setNrcPassportNo(event.target.value)}
+                    value={register.nrcPassportNo} 
+                    onChange={handleChange}
+                    name="nrcPassportNo"
                     
                 />
 
                 <Input placeholder="Photo" 
                     type="file"
-                    value={photo} onChange={event => setPhoto(event.target.value)}
+                    value={register.img} 
+                    onChange={handleChange}
+                    name="img"
                 />                      
 
                 <Input placeholder="Phone Number" 
                     type="Number"
-                    value={phoneNumber} onChange={event => setPhoneNumber(event.target.value)}
+                    value={register.phonenumber} 
+                    onChange={handleChange}
+                    name="phonenumber"
                     
                 /> 
 
                 <Input placeholder="Pin" 
                     type="password"
-                    value={pin} onChange={event => SVGTextPositioningElement(event.target.value)}
+                    value={register.pin} 
+                    onChange={handleChange}
+                    name="pin"
                     
                 />        
 
                 <Input placeholder="Address" 
                     type="text"
-                    value={address} onChange={event => SetAddress(event.target.value)}
+                    value={register.address} 
+                    onChange={handleChange}
+                    name="address"
                    
                 /> 
-                <Buttonprops 
-                   button_name= "Register"
+                <Input placeholder="sim" 
+                    type="text"
+                    value={register.sim} 
+                    onChange={handleChange}
+                    name="sim"
                    
-                   
-                />
+                /> 
+                
         </ul>
        
       
         </form>
-        {fullName}
-        {address}
-        {pin}
-        {phoneNumber}
-        {photo}
-        {nrcPassportNo}
-        {dateOfBirth}
-        
+        <button className="p-2 bg-purple-600 mt-8 mb-8
+            rounded-lg w-64 h-14 lg:gap-py-8 
+            hover:bg-purple-400 
+            hover:text-gray-100 
+            text-2xl"
+                   button_name= "Register"
+                   role="submit"
+                   onClick={handleClick}  
+                > Register </button>
         </div>
             
     </div>
