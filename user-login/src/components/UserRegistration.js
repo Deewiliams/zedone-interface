@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import Input from './Input'
-import Buttonprops from './Buttonprops'
+import Buttonprops from './ButtonProps'
 
 
 const UserRegistration = () => {

@@ -1,82 +1,161 @@
-import React,{useState, useEffect} from 'react'
-import Input from '../components/Input'
-import Buttonprops from '../components/Buttonprops'
+import React, { useState } from "react";
+import Input from "../components/Input";
+import Validation from "./Validation";
 
+const initialState = {
+  companyName: "",
+  companyAddress: "",
+  companyRep: "",
+  occupation: "",
+  email: "",
+  passwordComp: "",
+};
 
 const CompanyRegistration = () => {
-    const [companyName,setCompanyName] = useState('');
-    const [companyAddress,setCompanyAddress] = useState('');
-    const [companyRepresentative,setCompanyRepresentative] = useState('');
-    const [occupation,setOccupation] = useState('');
-    const [email,setEmail] = useState('');
-    const [password,setPassword] = useState('');
-    const [re_password,setRe_Password] = useState('');
+  const [company, setCompany] = useState(initialState);
+  const [errors, setErrors] = useState({});
+  const [responseMessage, setResponseMessage] = useState({
+    isError: false,
+    message: null,
+  })
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        console.log(handleSubmit);
-    }
-   
-    return (
-        <div className="h-screen bg-gradient-to-tr from-white to-purple-500 flex items-center justify-center">
-            <div className="bg-gray-200 shadow-2xl p-4 w-2/3 rounded-lg">
-            <h1 className="sm:text-lg font-bold mb-10 text-white
+
+  function handleChange(event) {
+    setCompany({ ...company, [event.target.name]: event.target.value });
+    //  console.log(company);
+  }
+
+  function handleClick() {
+    setErrors(Validation(company));
+    console.log(company);
+
+
+    fetch("http://localhost:5000/api/v1/registerCompany", {
+      method: "POST",
+      body: JSON.stringify(company),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        console.log(response);
+        return response.json();
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  return (
+    <div className="h-screen bg-gradient-to-tr from-white to-purple-500 flex items-center justify-center">
+      <div className="bg-white shadow-2xl p-4 -mt-20 rounded-lg">
+        <h1
+          className="text-lg px-4 font-bold mb-10 text-white
              md:font-bold md:text-3xl mx-1 
              uppercase font-sans
-             bg-purple-500 h-16
+             bg-purple-500 h-10
              rounded-lg
-             ">
-            Company Registration Form</h1>
+             "
+        >
+          Company Registration Form
+        </h1>
 
-            <form className="space-y-8">
-            <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 grid-rows-4 grid-flow-row gap-6">
-              
-                   <Input placeholder="Company Name" 
-                        type="text"
-                        value={companyName} onChange={event => setCompanyName(event.target.value)}
-                    />
+        <form className="space-y-8" onSubmit={handleClick}>
+          <ul className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 grid-rows-4 grid-flow-row gap-6 -mt-6">
+            <Input
+              placeholder="Company Name"
+              type="text"
+              value={company.companyName}
+              onChange={handleChange}
+              name="companyName"
+            />
+            {errors.companyName && (
+              <p className="text-red-700 text-xs space-y-2 mr-28 lg:mt-6 lg:text-lg">
+                {errors.companyName}
+              </p>
+            )}
 
-                    <Input placeholder="Company Address" 
-                        type="text"
-                        value={companyAddress} onChange={event => setCompanyAddress(event.target.value)}
-                    />
+            <Input
+              placeholder="Company Address"
+              type="text"
+              value={company.companyAddress}
+              onChange={handleChange}
+              name="companyAddress"
+            />
+            {errors.companyAddress && (
+              <p className="text-red-700 text-xs space-y-2 mr-28 lg:mt-6 lg:text-lg">
+                {errors.companyAddress}
+              </p>
+            )}
 
-                    <Input placeholder="Company Representative" 
-                        type="text"
-                        value={companyRepresentative} onChange={event => setCompanyRepresentative(event.target.value)}
-                    />
+            <Input
+              placeholder="Company Representative"
+              type="text"
+              value={company.companyRep}
+              onChange={handleChange}
+              name="companyRep"
+            />
+            {errors.companyRep && (
+              <p className="text-red-700 text-xs space-y-2 mr-28 lg:mt-6 lg:text-lg">
+                {errors.companyRep}
+              </p>
+            )}
 
-                    <Input placeholder="Occupation" 
-                        type="text"
-                        value={occupation} onChange={event => setOccupation(event.target.value)}
-                    />                      
+            <Input
+              placeholder="Occupation"
+              type="text"
+              value={company.occupation}
+              onChange={handleChange}
+              name="occupation"
+            />
+            {errors.occupation && (
+              <p className="text-red-700 text-xs space-y-2 mr-28 lg:mt-6 lg:text-lg">
+                {errors.occupation}
+              </p>
+            )}
 
-                    <Input placeholder="zedone@example.com" 
-                        type="text"
-                        value={email} onChange={event => setEmail(event.target.value)}
-                    /> 
+            <Input
+              placeholder="zedone@example.com"
+              type="email"
+              value={company.email}
+              onChange={handleChange}
+              name="email"
+            />
+            {errors.email && (
+              <p className="text-red-700 text-xs space-y-2 mr-28 lg:mt-6 lg:text-lg">
+                {errors.email}
+              </p>
+            )}
 
-                    <Input placeholder="Password" 
-                        type="password"
-                        value={password} onChange={event => setPassword(event.target.value)}
-                    />        
+            <Input
+              placeholder="Password"
+              type="password"
+              value={company.passwordComp}
+              onChange={handleChange}
+              name="passwordComp"
+            />
+            {errors.passwordComp && (
+              <p className="text-red-700 text-xs space-y-2 mr-28 lg:mt-6 lg:text-lg">
+                {errors.passwordComp}
+              </p>
+            )}
+          </ul>
+        </form>
+        <button
+          className="bg-purple-500 
+                text-gray-100 text-2xl lg:-w-40 mt-4 px-32 py-2
+                 md:px-36 md:text-4xl md:-mt-20 lg:py-4 lg:w-2/3
+                lg:px-20 lg:text-3xl hover:bg-purple-600 
+                hover:text-white rounded-lg
+                "
+          role="submit"
+          onClick={handleClick}
+        >
+          Login
+        </button>
+      </div>
+    </div>
+  );
+};
 
-                    <Input placeholder="Re-Enter Password" 
-                        type="password"
-                        value={re_password} onChange={event => setRe_Password(event.target.value)}
-                    /> 
-                    <Buttonprops 
-                       button_name= "Register"
-                       onClick={handleSubmit}
-                    />
-            </ul>
-           
-          
-            </form>
-            </div>
-                
-        </div>
-    )
-}
-
-export default CompanyRegistration
+export default CompanyRegistration;
