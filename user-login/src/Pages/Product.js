@@ -1,13 +1,13 @@
 import React from 'react'
-import MainTransaction from './MainTransaction'
-import mobile from "../images/mobile.png"
+import product from '../images/product.png'
+import MainTransaction from '../components/MainTransaction'
 
-const Mobile = () => {
+const Product = () => {
     return (
         <MainTransaction 
-        image={mobile}
-        title="Mobile Payments"
-        secondTitle="About About Mobile payments"
+        image={product}
+        title="Product payments"
+        secondTitle="About product payments"
         paragraph="Online transaction is a payment method in which the transfer 
         of fund or money happens online over electronic fund transfer. Online 
         transaction process (OLTP) is secure and password protected. Three steps involved 
@@ -16,4 +16,4 @@ const Mobile = () => {
     )
 }
 
-export default Mobile
+export default Product

@@ -1,19 +1,19 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Home from "./components/Home";
-import CompanyRegistration from "./components/CompanyRegistration";
-import Login from "./components/Login";
+import Home from "./components/HomeCard";
+import CompanyRegistration from "./components/Auth/CompanyRegistration";
+import Login from "./components/Auth/Login";
 import UserRegistration from "./components/UserRegistration";
-import CompanyLogged from "./components/CompanyLogged";
+import CompanyLogged from "./components/Auth/CompanyLogged";
 import HeaderNav from "./components/HeaderNav";
-import Online from "./components/Online";
-import Subscriptions from "./components/Subscriptions";
+import Online from "./Pages/Online";
+import Subscriptions from "./Pages/Subscriptions";
 import "./App.css";
-import PageNotFound from "./components/PageNotFound";
-import AboutUs from "./components/AboutUs";
-import Mobile from "./components/Mobile"
-import Product from "./components/Product";
+import PageNotFound from "./Pages/PageNotFound";
+import AboutUs from "./Pages/AboutUs";
+import Mobile from "./Pages/Mobile"
+import Product from "./Pages/Product";
 
-function App() {
+function App () {
   return (
     <div className="App">
       <BrowserRouter>

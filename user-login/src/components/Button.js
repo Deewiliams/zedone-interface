@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 const ButtonProps = (props) => {
   let history = useHistory();
 
-  function handleClick() {
+  function handleClick () {
     history.push(props.link)
   }
   return (
@@ -24,6 +24,7 @@ const ButtonProps = (props) => {
 
 ButtonProps.propTypes = {
   info: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
 };
 
 export default ButtonProps;

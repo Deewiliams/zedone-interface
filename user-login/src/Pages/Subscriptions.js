@@ -1,6 +1,6 @@
 import React from 'react'
 import Subscription from '../images/Subscriptions.png'
-import MainTransaction from './MainTransaction'
+import MainTransaction from '../components/MainTransaction'
 
 const Subscriptions = () => {
     return (
