@@ -9,6 +9,20 @@
 
 
 
+How to the App Works
+
+-The Home Page
+ The users are able to view the type of  service that the campany offers and also view more about the campany details.
+ 
+-Campany Registration Form
+  Only Companies are allowed to Register, Registering with the fellowing Details
+  1.Company Name
+  2.Company Address
+  3.Campany Representative
+  4.Occupation
+  5.Email
+  6.Password
+
 
 To run the App
 
