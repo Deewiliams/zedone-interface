@@ -1,5 +1,5 @@
 # zedone-interface-final
 
-![graph representation ](./user-login/src/images/Landing page.png)
+![Company Langing Page](https://github.com/Deewiliams/zedone-interface-final/blob/main/user-login/src/images/Landing%20page.png?raw=true)
 
-![graph representation ](./user-login/src/images/Company_Registration_page.png)
+![Company Registration Form](./user-login/src/images/Company_Registration_page.png)
