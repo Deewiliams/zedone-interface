@@ -31,7 +31,9 @@ Fork this repo
 
 Clone your forked repo
 
-git clone https://github.com/your-github-username/zedone-interface.git
+git clone https://github.com/your-github-username/zedone-interface.git repo to the local machine.
+
+open your machine terminal and cd to the repo project then run npm install to install all the packages then run npm start.
 
 
 
