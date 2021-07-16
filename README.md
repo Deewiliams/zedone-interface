@@ -5,8 +5,8 @@
 
 ![Company Langing Page](https://github.com/Deewiliams/zedone-interface-final/blob/main/user-login/src/images/Landing%20page.png?raw=true)
 
-#Campany Registration Form
-  *Only Companies are allowed to Register, Registering with the following Details.
+# Campany Registration Form
+  Only Companies are allowed to Register, Registering with the following Details.
   
   1.Company Name
   2.Company Address
