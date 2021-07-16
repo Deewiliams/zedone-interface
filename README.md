@@ -16,14 +16,7 @@ Fork this repo
 
 Clone your forked repo
 
-git clone https://github.com/your-github-username/SparkEd.git
+git clone https://github.com/your-github-username/zedone-interface.git
 
-Add this repo to your remotes as upstream.
-
-git remote add upstream https://github.com/SparkEdUAB/SparkEd
-
-Before pushing anything to your fork, always
-
-git pull upstream master
 
 
