@@ -23,9 +23,6 @@ Only if a company has registered will be able to login using their email and pas
 
 ![Company LOgin Page](https://github.com/Deewiliams/zedone-interface-final/blob/main/user-login/src/images/company_login_page.png)
 
-
-# To run the App
-
 Fork this repo
 
 Clone your forked repo
