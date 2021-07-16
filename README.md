@@ -16,6 +16,7 @@ How to the App Works
  
 -Campany Registration Form
   Only Companies are allowed to Register, Registering with the following Details.
+  
   1.Company Name
   2.Company Address
   3.Campany Representative
