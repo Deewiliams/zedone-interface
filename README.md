@@ -23,6 +23,9 @@ How to the App Works
   4.Occupation
   5.Email
   6.Password
+  
+-Company Login Page
+*Only if a company has registered will be able to login using their email and password created.
 
 
 To run the App
