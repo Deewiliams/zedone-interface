@@ -19,8 +19,8 @@
   6.Password
 
 ![Company LOgin Page](https://github.com/Deewiliams/zedone-interface-final/blob/main/user-login/src/images/company_login_page.png)
-#Company Login Page
-*Only if a company has registered will be able to login using their email and password created.
+# Company Login Page
+Only if a company has registered will be able to login using their email and password created.
 
 
 # To run the App
