@@ -1,13 +1,10 @@
 # zedone-interface
-# How the App Works
-
-![Company Langing Page](https://github.com/Deewiliams/zedone-interface-final/blob/main/user-login/src/images/Landing%20page.png?raw=true)
+ How the App Works
 # The Home Page.
  The users are able to view the type of  service that the campany offers and also view more about the campany details.
 
+![Company Langing Page](https://github.com/Deewiliams/zedone-interface-final/blob/main/user-login/src/images/Landing%20page.png?raw=true)
 
-![Company Registration Form](./user-login/src/images/Company_Registration_page.png)
- 
 #Campany Registration Form
   *Only Companies are allowed to Register, Registering with the following Details.
   
@@ -18,9 +15,14 @@
   5.Email
   6.Password
 
-![Company LOgin Page](https://github.com/Deewiliams/zedone-interface-final/blob/main/user-login/src/images/company_login_page.png)
-# Company Login Page
+![Company Registration Form](./user-login/src/images/Company_Registration_page.png)
+ 
+ # Company Login Page
 Only if a company has registered will be able to login using their email and password created.
+
+
+
+![Company LOgin Page](https://github.com/Deewiliams/zedone-interface-final/blob/main/user-login/src/images/company_login_page.png)
 
 
 # To run the App
